@@ -2,11 +2,79 @@
 <html lang="lt">
 <head>
   <meta charset="UTF-8">
-  <title>Mano puslapis su katinu</title>
+  <title>Emilija ❤️</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #ffe6f0;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .heart-container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      animation: rotate 5s linear infinite; /* sukasi visada */
+    }
+
+    /* širdelės forma su CSS */
+    .heart {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ff4d94;
+      clip-path: polygon(
+        50% 0%,
+        61% 8%,
+        68% 16%,
+        74% 25%,
+        78% 34%,
+        80% 44%,
+        79% 55%,
+        74% 66%,
+        68% 75%,
+        61% 83%,
+        50% 92%,
+        39% 83%,
+        32% 75%,
+        26% 66%,
+        21% 55%,
+        20% 44%,
+        22% 34%,
+        26% 25%,
+        32% 16%,
+        39% 8%
+      );
+    }
+
+    .heart-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 3em;
+      font-weight: bold;
+      color: white;
+      text-align: center;
+      user-select: none;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-  <h1>Labukas</h1>
-  <p>Čia tu :) </p>
-  <img src="how-to-poop-quietly_2904fec5-ea1b-4c82-bd6d-f0415b9f30e0.webp" alt="Kaka" width="700">
+  <div class="heart-container">
+    <div class="heart"></div>
+    <div class="heart-text">EMILIJA</div>
+  </div>
 </body>
 </html>
