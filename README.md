@@ -1,2 +1,1 @@
-# mano-puslapis
-Atsiskaitymui ETP
+
