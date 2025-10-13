@@ -1,80 +1,170 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="lt">
 <head>
-  <meta charset="UTF-8">
-  <title>Emilija ❤️</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mano paprasta svetainė</title>
   <style>
-    body {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #ffe6f0;
-      margin: 0;
-      font-family: Arial, sans-serif;
+    /* Pagrindinis stilius */
+    :root{
+      --accent:#2b6cb0;
+      --bg:#f7fafc;
+      --text:#1a202c;
+      --card:#ffffff;
     }
-
-    .heart-container {
-      position: relative;
-      width: 300px;
-      height: 300px;
-      animation: rotate 5s linear infinite; /* sukasi visada */
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.5;
     }
-
-    /* širdelės forma su CSS */
-    .heart {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #ff4d94;
-      clip-path: polygon(
-        50% 0%,
-        61% 8%,
-        68% 16%,
-        74% 25%,
-        78% 34%,
-        80% 44%,
-        79% 55%,
-        74% 66%,
-        68% 75%,
-        61% 83%,
-        50% 92%,
-        39% 83%,
-        32% 75%,
-        26% 66%,
-        21% 55%,
-        20% 44%,
-        22% 34%,
-        26% 25%,
-        32% 16%,
-        39% 8%
-      );
+    header{
+      background:linear-gradient(90deg,var(--accent),#2c5282);
+      color:white;
+      padding:16px 20px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
-
-    .heart-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 3em;
-      font-weight: bold;
-      color: white;
-      text-align: center;
-      user-select: none;
+    .logo{font-weight:700; letter-spacing:0.4px}
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin-left:14px;
+      font-weight:600;
+      opacity:0.95;
     }
+    main{max-width:1000px;margin:28px auto;padding:0 16px}
+    .hero{
+      background:var(--card);
+      padding:28px;
+      border-radius:12px;
+      box-shadow:0 6px 18px rgba(10,10,20,0.06);
+      display:grid;
+      grid-template-columns:1fr;
+      gap:16px;
+    }
+    .hero h1{margin:0 0 6px 0;font-size:1.8rem}
+    .hero p{margin:0 0 12px 0;color:#374151}
+    .buttons{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:600;
+    }
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{border:2px solid var(--accent);color:var(--accent);background:transparent}
 
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+    /* Simple grid for features */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+    .card{background:var(--card);padding:16px;border-radius:10px;box-shadow:0 4px 12px rgba(10,10,20,0.04)}
+    footer{max-width:1000px;margin:28px auto;padding:20px 16px;text-align:center;color:#6b7280}
+
+    /* Responsive tweaks */
+    @media (min-width:760px){
+      .hero{grid-template-columns:2fr 1fr;align-items:center}
+      .hero h1{font-size:2.1rem}
     }
   </style>
 </head>
 <body>
-  <div class="heart-container">
-    <div class="heart"></div>
-    <div class="heart-text">EMILIJA</div>
-  </div>
+
+  <header>
+    <div class="logo">TavoVardas.lt</div>
+    <nav>
+      <a href="#apie">Apie</a>
+      <a href="#paslaugos">Paslaugos</a>
+      <a href="#kontaktai">Kontaktai</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="apie">
+      <div>
+        <h1>Sveiki atvykę į mano paprastą svetainę</h1>
+        <p>Ši svetainė paruošta greitam pradėjimui — lengvai redaguojama ir tinkanti portfolio, smulkiam verslui arba projekto pristatymui.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="#kontaktai">Parašyk man</a>
+          <a class="btn btn-outline" href="#paslaugos">Sužinok daugiau</a>
+        </div>
+      </div>
+
+      <div class="card" aria-hidden="true">
+        <h3>Trumpai</h3>
+        <p>Greitas techninis aprašymas:</p>
+        <ul>
+          <li>HTML5 + CSS (viename faile)</li>
+          <li>Responsyvus dizainas</li>
+          <li>Lengva pritaikyti turinį</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="paslaugos" style="margin-top:18px">
+      <h2>Kas siūloma</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Portfolio</h4>
+          <p>Rodykite savo darbus, nuotraukas ar projektus.</p>
+        </div>
+        <div class="card">
+          <h4>Tinklaraštis</h4>
+          <p>Paprasta skelbti įrašus ir naujienas.</p>
+        </div>
+        <div class="card">
+          <h4>Kontaktų forma</h4>
+          <p>Improvizuota forma (žemiau) prisijungs prie serverio ar el. pašto.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="kontaktai" style="margin-top:20px">
+      <h2>Kontaktai</h2>
+      <div class="card" style="padding:18px;max-width:640px">
+        <form id="contactForm" onsubmit="return submitForm(event)">
+          <label for="name">Vardas</label><br/>
+          <input id="name" name="name" type="text" placeholder="Tavo vardas" style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #e5e7eb" required />
+
+          <label for="email">El. paštas</label><br/>
+          <input id="email" name="email" type="email" placeholder="vardas@pastas.lt" style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #e5e7eb" required />
+
+          <label for="message">Žinutė</label><br/>
+          <textarea id="message" name="message" rows="5" placeholder="Žinutė..." style="width:100%;padding:8px;margin:6px 0;border-radius:6px;border:1px solid #e5e7eb" required></textarea>
+
+          <button class="btn btn-primary" type="submit">Siųsti</button>
+          <div id="msg" style="margin-top:10px;color:#166534;display:none">Žinutė išsiųsta!</div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Tavo Vardas — Sukurta su <span title="HTML">❤️</span>
+  </footer>
+
+  <script>
+    // nustatyti metai footer'yje
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // imituota formos siuntimo logika (pakeisk, kad naudotum serverį)
+    function submitForm(e){
+      e.preventDefault();
+      // čia būtų AJAX POST į serverį arba Formspree/Netlify Forms ir pan.
+      // Dėl demonstracijos tiesiog parodome pranešimą:
+      const msg = document.getElementById('msg');
+      msg.style.display = 'block';
+      // išvalyti formą po 1.2s
+      setTimeout(()=> {
+        document.getElementById('contactForm').reset();
+        msg.style.display = 'none';
+      }, 1200);
+      return false;
+    }
+  </script>
+
 </body>
 </html>
