@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="lt">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Praktinė užduotis</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
+    <meta charset="UTF-8">
+    <title>EPT</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
 
-    h1 {
-      color: #0066cc;
-      font-size: 2em;
-      margin-bottom: 10px;
-    }
+        h1 {
+            font-size: 28px;
+        }
 
-    p {
-      font-size: 1.1em;
-      margin-bottom: 20px;
-    }
-
-    img {
-      width: 150px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    footer {
-      position: absolute;
-      bottom: 15px;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
+        img {
+            margin-top: 30px;
+            width: 250px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Praktinė užduotis – EPT</h1>
-  <p>Šis puslapis patalpintas per <strong>GitHub Pages</strong>.</p>
-  <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub logotipas">
-  <footer>© 2025 Deividas Gudaitis</footer>
+    <h1>Deividas Gudaitis</h1>
+    <h1>EPT 2025-10-20, <span id="data"></span></h1>
+
+    <img src="7-0730-h-pm-19-260nw-2290354017.webp" alt="Laikrodis">
+
+    <script>
+        // Rodo šiandienos datą
+        const dabar = new Date();
+        const data = dabar.toISOString().split('T')[0];
+        document.getElementById('data').textContent = data;
+    </script>
 </body>
 </html>
